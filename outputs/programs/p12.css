@@ -1,0 +1,122 @@
+
+/* P12: Advanced CSS Grid Portfolio */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f5f9;
+    color: #1e293b;
+}
+
+/* Header */
+.header {
+    background-color: #1e293b;
+    color: white;
+    text-align: center;
+    padding: 40px;
+}
+
+/* Main Container */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+.container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Project Grid */
+.project-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    grid-template-rows: repeat(2, minmax(180px, auto));
+
+    gap: 20px;
+}
+
+/* Project Cards */
+.project {
+    padding: 30px;
+    border-radius: 12px;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    min-height: 180px;
+    transition: transform 0.3s;
+}
+
+.project:hover {
+    transform: translateY(-8px);
+}
+
+.project h3 {
+    margin-bottom: 10px;
+}
+
+.project-one {
+    background-color: #2563eb;
+    grid-column: span 2;
+}
+
+.project-two {
+    background-color: #059669;
+}
+
+.project-three {
+    background-color: #7c3aed;
+}
+
+.project-four {
+    background-color: #ea580c;
+}
+
+.project-five {
+    background-color: #0891b2;
+}
+
+.project-six {
+    background-color: #be123c;
+}
+
+/* Footer */
+footer {
+    background-color: #1e293b;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .project-one {
+        grid-column: span 2;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-one {
+        grid-column: span 1;
+    }
+}

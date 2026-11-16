@@ -1,0 +1,133 @@
+
+/* P8: Sticky Navbar and Card Overlay */
+
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Sticky Navbar */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background-color: #1e293b;
+    color: white;
+
+    padding: 20px 40px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.navbar nav a:hover {
+    color: #38bdf8;
+}
+
+/* Hero Section */
+.hero {
+    background-color: #2563eb;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h2 {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+/* Content Sections */
+.content {
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.content h2 {
+    margin-bottom: 25px;
+}
+
+/* Card Container */
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+/* Project Card */
+.card {
+    position: relative;
+    width: 280px;
+    height: 220px;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+/* Card Backgrounds */
+.card-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.image-one {
+    background-image: linear-gradient(135deg, #2563eb, #7c3aed);
+}
+
+.image-two {
+    background-image: linear-gradient(135deg, #059669, #0f766e);
+}
+
+.image-three {
+    background-image: linear-gradient(135deg, #ea580c, #be123c);
+}
+
+/* Overlay */
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    padding: 20px;
+
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.card:hover .overlay {
+    opacity: 1;
+}
+
+/* Footer */
+footer {
+    background-color: #1e293b;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}

@@ -1,0 +1,124 @@
+
+/* P11: Newspaper Layout using CSS Grid */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, serif;
+    background-color: #f1f1f1;
+    padding: 20px;
+}
+
+.newspaper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+        "header header header"
+        "nav nav nav"
+        "featured featured featured"
+        "column1 column2 column3"
+        "footer footer footer";
+
+    gap: 15px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* Header */
+.header {
+    grid-area: header;
+    background-color: #1e293b;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+/* Navigation */
+.navigation {
+    grid-area: nav;
+    background-color: #2563eb;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.navigation a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Featured Article */
+.featured {
+    grid-area: featured;
+    background-color: white;
+    padding: 30px;
+    border-left: 5px solid #2563eb;
+}
+
+/* Three Columns */
+.column {
+    background-color: white;
+    padding: 25px;
+    min-height: 180px;
+}
+
+.column:nth-of-type(3) {
+    grid-column: 1;
+}
+
+.column:nth-of-type(4) {
+    grid-column: 2;
+}
+
+.column:nth-of-type(5) {
+    grid-column: 3;
+}
+
+h2 {
+    margin-bottom: 15px;
+    color: #1e293b;
+}
+
+p {
+    line-height: 1.7;
+}
+
+/* Footer */
+.footer {
+    grid-area: footer;
+    background-color: #1e293b;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    .newspaper {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "nav"
+            "featured"
+            "column1"
+            "column2"
+            "column3"
+            "footer";
+    }
+
+    .column:nth-of-type(3),
+    .column:nth-of-type(4),
+    .column:nth-of-type(5) {
+        grid-column: auto;
+    }
+
+    .navigation {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+}
